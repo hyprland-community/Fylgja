@@ -25,3 +25,7 @@ This could be a wrapper around todo applications. I'm not sure how I want to imp
 ## Further concepts
 
 While the initial concepts have the priority, I might create some "repositories" for things like system management scripts or project initialization templates for things such as Docker. These will be separate repositories, but will be linked to this repository.
+
+## Contributing 
+
+I don't know what exactly this project is meant to be, but I am open to suggestions, POC code, ideas and anything else. If you have any ideas, please open an issue or a pull request. I will try to respond as soon as possible.
