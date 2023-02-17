@@ -1,0 +1,12 @@
+[package]
+name = "sysdev"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+colored = "2"
+directories = "4.0"
+
+[[bin]]
+name = "sysdev"
+path = "src/main.rs"
