@@ -1,16 +1,28 @@
-use std::env;
+// get project info from Cargo.toml
+pub const VERSION: &str = env!("CARGO_PKG_VERSION");
+pub const NAME: &str = env!("CARGO_PKG_NAME");
 
-// help function
 const SYSDEV_HELP: &str = "Usage: sysdev [COMMAND] [ARGUMENTS]
-Todo is a super fast and simple tasks organizer written in rust
-Example: sysdev init -n \"My Project\" -l \"Rust\" -p \"/home/user/projects/my-project\" -g true
+    sysdev is a multi-purpose command-line interface for system administration tasks.
 
-Available commands:
-    - init -n [NAME] -p [PATH] -l [LANGUAGE] -g [GIT] 
-        Initialize a new project with the given parameters
-        Example: sysdev init -n \"My Project\" -l \"Rust\" -p \"/home/user/projects/my-project\" -g true
+    Available commands:
+
+        [Project Management]
+
+        > init --name [NAME] --path [PATH] --lang [LANGUAGE] --git [GIT] 
+            Initialize a new project with the given parameters
+            Example: sysdev init --name \"My Project\" --lang \"Rust\" -path\"/home/user/projects/my-project\" --git
+
+        [System Management]
+
+        [Package Management]
 
 ";
+
 pub fn help() {
     println!("{}", SYSDEV_HELP);
+}
+
+pub fn version() {
+    println!("{} {}", NAME, VERSION);
 }
