@@ -1,7 +1,7 @@
 use std::env;
 
 // get the help function from lib.rs
-use sysdev::{help, version};
+use fylgja::{help, version};
 
 pub mod project;
 
@@ -22,8 +22,8 @@ fn main() {
                 println!("┌──────────────────────────────────────────────┐");
                 println!(
                     "│    Welcome to {} {}                   │",
-                    sysdev::NAME,
-                    sysdev::VERSION
+                    fylgja::NAME,
+                    fylgja::VERSION
                 );
                 println!("│     A multi-purpose command-line interface   │");
                 println!("│     for system administration tasks.         │");

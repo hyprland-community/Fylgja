@@ -39,7 +39,7 @@ impl Project {
                     }
                     _ => {
                         // no arguments passed, command cannot proceed without arguments
-                        println!("Invalid command. Use \"sysdev help init\" for more information.");
+                        println!("You need to supply arguments to the command. Use \"sysdev help init\" for more information.");
                     }
                 }
             }
@@ -56,7 +56,8 @@ impl Project {
                 // create the project directory
                 let project_path = format!("{}/{}", project.path, project.name);
                 let project_path = project_path.replace("\"", "");
-                fs::create_dir_all(project_path).expect("Failed to create project directory");
+                fs::create_dir_all(project_path.clone())
+                    .expect("Failed to create project directory");
 
                 // check the language argument and create the appropriate files based on the language
                 match &project.language[..] {
@@ -102,16 +103,21 @@ impl Project {
                     }
 
                     _ => {
-                        println!(
-                            "Invalid language. Use \"sysdev help init\" for more information."
-                        );
+                        // if no arguments are passed, return nothing and exit
+                        if project.language == "" {
+                            return;
+                        } else {
+                            println!(
+                                "Invalid language. Use \"sysdev help init\" for more information."
+                            );
+                        }
                     }
                 }
             }
 
             create_project(project);
         } else {
-            println!("Invalid command. Use \"sysdev help init\" for more information.");
+            println!("Invalid command. Use \"sysdev help\" for more information.");
         }
     }
 }

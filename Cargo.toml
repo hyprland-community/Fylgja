@@ -1,5 +1,5 @@
 [package]
-name = "sysdev"
+name = "fylgja"
 version = "0.1.0"
 edition = "2021"
 
@@ -8,5 +8,5 @@ colored = "2"
 directories = "4.0"
 
 [[bin]]
-name = "sysdev"
+name = "fylgja"
 path = "src/main.rs"
