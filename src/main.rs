@@ -1,5 +1,5 @@
 use std::env;
-
+use colored::Colorize;
 // get the help function from lib.rs
 use fylgja::{help, version};
 
@@ -19,16 +19,22 @@ fn main() {
             "init" => Project::new_project(args),
 
             _ => {
-                println!("┌──────────────────────────────────────────────┐");
-                println!(
-                    "│    Welcome to {} {}                   │",
-                    fylgja::NAME,
-                    fylgja::VERSION
-                );
-                println!("│     A multi-purpose command-line interface   │");
-                println!("│     for system administration tasks.         │");
-                println!("└──────────────────────────────────────────────┘");
+                help();   
             }
         }
+    } else {
+        println!("{}","┌──────────────────────────────────────────────┐".blue());
+        println!("{}{} {}{}",
+                 "│             Welcome to ".blue(),
+                 fylgja::NAME.to_string().purple(), 
+                 fylgja::VERSION.bright_red(),
+                 "          │".blue(),
+
+
+                 );
+        println!("{}","│     A multi-purpose command-line interface   │".blue());
+        println!("{}","│         for system administration tasks.     │".blue());
+        println!("{}","└──────────────────────────────────────────────┘".blue());
+
     }
 }
